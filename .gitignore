@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+.env
+
+# C Sh
+*.exe
+*.dll
+*.cache
+
+
+# C
+*.o
