@@ -1,6 +1,7 @@
 # Python
 __pycache__/
 .env
+.pytest_cache
 
 # C Sh
 *.exe
@@ -10,3 +11,8 @@ __pycache__/
 
 # C
 *.o
+
+
+# Envs
+venv
+.vscode
