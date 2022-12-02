@@ -21,19 +21,19 @@ def compute(s: str) -> int:
     }
     wins = {
         "A": {
-            3: "AA",
-            6: "AB",
-            0: "AC"
+            3: "A",
+            6: "B",
+            0: "C"
         },
         "B": {
-            3: "BB",
-            0: "BA",
-            6: "BC"
+            3: "B",
+            0: "A",
+            6: "C"
         },
         "C": {
-            3: "CC",
-            6: "CA",
-            0: "CB"
+            3: "C",
+            6: "A",
+            0: "B"
         },
     }
     s = s.splitlines()
@@ -42,7 +42,7 @@ def compute(s: str) -> int:
     for item in s:
         player1, outcome = item[0], (ord(item[2]) - 88) * 3
         play = wins[player1][outcome]
-        value = outcome + scores[play[1]]
+        value = outcome + scores[play]
         total += value
     return total
 
