@@ -10,7 +10,7 @@ A Y
 B X
 C Z
 """
-TEST_EXPECTED = 15
+TEST_EXPECTED = 12
 
 
 def compute(s: str) -> int:
@@ -20,24 +20,30 @@ def compute(s: str) -> int:
         "C": 3,
     }
     wins = {
-        "AA": 3,
-        "AB": 6,
-        "AC": 0,
-        "BB": 3,
-        "BA": 0,
-        "BC": 6,
-        "CC": 3,
-        "CA": 6,
-        "CB": 0,
+        "A": {
+            3: "AA",
+            6: "AB",
+            0: "AC"
+        },
+        "B": {
+            3: "BB",
+            0: "BA",
+            6: "BC"
+        },
+        "C": {
+            3: "CC",
+            6: "CA",
+            0: "CB"
+        },
     }
     s = s.splitlines()
 
     total = 0
     for item in s:
-        combined = f'{item[0]}{chr(ord(item[2]) - 23)}'
-        value = wins[combined] + scores[combined[1]]
+        player1, outcome = item[0], (ord(item[2]) - 88) * 3
+        play = wins[player1][outcome]
+        value = outcome + scores[play[1]]
         total += value
-
     return total
 
 
