@@ -24,7 +24,7 @@ bool GetNextPair(FILE **file_ptr, char *opponents_action, char *response){
     (*opponents_action) = ' ';
     (*response) = ' ';
     
-    buffer = calloc(0, sizeof(char)*2);
+    buffer = calloc(sizeof(char), 2);
     if(NULL == buffer){
         printf("[-] Could not allocate buffer\n");
         return false;
@@ -138,6 +138,7 @@ int main(int argc, char** argv){
         total += CalculateScore(oppenent_action, response);
     }
     
+    fclose(fp);
     printf("[+] Answer: %d\n", total);
     
     return 0;

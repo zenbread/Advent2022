@@ -83,7 +83,7 @@ GAME_OUTCOME GetOutcome(char outcome){
     }
 }
 
-GAME_OUTCOME DetermineResponse(GAME_STATE p1_action, GAME_OUTCOME outcome){
+GAME_STATE DetermineResponse(GAME_STATE p1_action, GAME_OUTCOME outcome){
     GAME_STATE p2_action = GAME_STATE_UNKNOWN;
 
     switch(outcome){
@@ -161,6 +161,7 @@ int main(int argc, char** argv){
         total += CalculateScore(oppenent_action, outcome);
     }
     
+    fclose(fp);
     printf("[+] Answer: %d\n", total);
     
     return 0;
