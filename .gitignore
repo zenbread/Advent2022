@@ -16,3 +16,7 @@ __pycache__/
 # Envs
 venv
 .vscode
+
+
+# advent
+input.txt
