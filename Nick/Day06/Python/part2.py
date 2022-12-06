@@ -12,8 +12,7 @@ TEST_EXPECTED = 19
 
 
 def compute(s: str) -> int:
-    s = s.splitlines()
-    s = s[0]
+    s = s.strip()
     distinct = set()
     index = 0
     backtrack = 0

@@ -12,8 +12,7 @@ TEST_EXPECTED = 7
 
 
 def compute(s: str) -> int:
-    s = s.splitlines()
-    s = s[0]
+    s = s.strip()
     for index in range(3, len(s)):
         a, b, c, d = s[index - 3], s[index - 2], s[index - 1], s[index]
         test = set([a, b, c, d])
