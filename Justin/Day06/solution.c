@@ -38,24 +38,6 @@ bool GetNextLine(FILE **file_ptr, char **buffer, int* bufferSize){
     return isSuccess;
 }
 
-bool isValidMarker(char* buffer, int windowSize){
-    bool tracker[26] = {0};
-
-    for(int i = 0; i < windowSize; i++){
-
-        if(tracker[buffer[i]-'a']){
-            /* This character is repeated */
-            return false;
-        }
-        
-        /* mark this character as seen */
-        tracker[buffer[i]-'a'] = true;
-    }
-    
-    /* SUCCESS: Every character was unique */
-    return true;
-}
-
 bool IsWindowValid(int charCounter[26]){
 
     for(int i = 0; i < 26; i++){
